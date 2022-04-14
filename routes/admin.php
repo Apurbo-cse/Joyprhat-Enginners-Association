@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\DashboardController;
 Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth']], function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('index');
+    Route::resource('slider', [SliderController::class]);
 
     Route::group(['prefix' => 'category/', 'as' => 'category.'], function () {
         Route::get('/', [CategoryController::class, 'index'])->name('index');
