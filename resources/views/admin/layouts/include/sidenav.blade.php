@@ -67,10 +67,10 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="pages/widgets.html" class="nav-link">
+                    <a href="{{ route('admin.slider.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
-                            Widgets
+                            Slider
                             <span class="right badge badge-danger">New</span>
                         </p>
                     </a>
