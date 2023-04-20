@@ -79,11 +79,11 @@ Joypurhat Engineers Association
                 <div class="row">
                     <div class="col-xxl-12">
                         <div class="slide-content">
-                            <h4 style="color:white;">We are <span
-                                    style="color:#20114b; font-weight:600;font-size:20px;text-shadow CardXS:5px slid white;">JEA</span>
+                            <h4 style="color:white;">We are <span class="text-info"
+                                    style="font-weight:600;font-size:20px;text-shadow CardXS:5px slid white;">JEA</span>
                             </h4>
                             <h1 class="text-light" style="padding:15px;">{{$slider->title}}</h1>
-                            <p class="text-success"style="padding:20px;">{{$slider->description}}</p>
+                            <p style="padding:20px; color: gray;">{!!$slider->description!!}</p>
                             {{-- <a href="about.html" class="box-btn">contact us <i
                                     class="fas fa-angle-double-right"></i></a> --}}
                         </div>
