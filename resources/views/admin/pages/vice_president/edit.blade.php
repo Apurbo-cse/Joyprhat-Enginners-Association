@@ -27,63 +27,51 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Name</label>
                             <div class="col-md-10">
-                                <input value="{{$president->name}}" name="name" type="text" id="name" class="form-control" placeholder="name">
-                                @error('name')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
+                                <input value="{{$president->name}}" disabled type="text" id="name" class="form-control" placeholder="name">
+                            
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-2 control-label">Designation</label>
+                            <label class="col-md-2 control-label">Email</label>
                             <div class="col-md-10">
-                                <input name="designation" value="{{$president->designation}}" class="form-control" rows="5" placeholder="Content">
-                                @error('designation')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
+                                <input value="{{$president->email}}" disabled class="form-control" rows="5" placeholder="Content">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-2 control-label">Job</label>
+                            <label class="col-md-2 control-label">Phone</label>
                             <div class="col-md-10">
-                                <input name="job" value="{{$president->job}}" class="form-control" rows="5" placeholder="Content">
-                                @error('job')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-2 control-label">Job Location</label>
-                            <div class="col-md-10">
-                                <input name="job_location" value="{{$president->job_location}}" class="form-control" rows="5" placeholder="Content">
-                                @error('job_location')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
+                                <input name="job" value="{{$president->phone}}" disabled class="form-control" rows="5" placeholder="Content">
+                              
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-2 control-label">Image</label>
                             <div class="col-md-10">
-                                <input type="file" class="form-control" name="image" >
-                                @error('image')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                                @if($president->image != null)
                                     <img src="{{ asset($president->image) }}" width="20%">
-                                @endif
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Member</label>
+                            <div class="col-md-10">
+                            <select class="form-control" name="member_type" id="exampleFormControlSelect1">
+                                <option selected>President</option>
+                            </select>           
+                        </div>
+                        </div>
+
                         <div class="form-group">
                             <label class="col-md-2 control-label">Status</label>
                             <div class="col-md-10">
                                 <div class="radio radio-info radio-inline">
                                     <input @if($president->status == '1') checked   @endif type="radio" id="active" value="1" name="status">
-                                    <label for="active"> Active </label>
+                                    <label for="active"> President </label>
                                 </div>
                                 <div class="radio radio-inline">
                                     <input @if($president->status == '0') checked   @endif type="radio" id="inactive" value="0" name="status">
-                                    <label for="inactive"> Inactive </label>
+                                    <label for="inactive"> Ex President </label>
                                 </div>
                                 @error('status')
                                 <div class="text-danger">{{ $message }}</div>
@@ -91,7 +79,7 @@
                             </div>
                         </div>
                         <div class="pull-right">
-                            <button type="submit" class="btn btn-info waves-effect waves-light">Save</button>
+                            <button type="submit" class="btn btn-info waves-effect waves-light">Make as President</button>
                         </div>
 
 

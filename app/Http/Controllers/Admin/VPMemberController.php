@@ -16,7 +16,7 @@ class VPMemberController extends Controller
     public function index()
     {
        $v_p_members= VPMember::orderBy('created_at', 'ASC')->paginate(20);
-        return view('admin.pages.vice_pre.index',compact('v_p_members'));
+        return view('admin.pages.vice_president.index',compact('v_p_members'));
     }
 
     /**
@@ -26,7 +26,7 @@ class VPMemberController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.vice_pre.create');
+        return view('admin.pages.vice_president.create');
     }
 
     /**
@@ -37,13 +37,13 @@ class VPMemberController extends Controller
      */
     public function store(Request $request)
    {
-        $vice_pre =new VPMember();
+        $vice_president =new VPMember();
 
-        $vice_pre->name = $request->input('name');
-        $vice_pre->designation = $request->input('designation');
-        $vice_pre->job = $request->input('job');
-        $vice_pre->job_location = $request->input('job_location');
-        $vice_pre->status = $request->input('status');
+        $vice_president->name = $request->input('name');
+        $vice_president->designation = $request->input('designation');
+        $vice_president->job = $request->input('job');
+        $vice_president->job_location = $request->input('job_location');
+        $vice_president->status = $request->input('status');
 
         if($request->hasfile('image'))
         {
@@ -51,7 +51,7 @@ class VPMemberController extends Controller
             $path ='images/member';
             $file_name = time() . $file->getClientOriginalName();
             $file->move($path, $file_name);
-            $vice_pre['image']= $path.'/'. $file_name;
+            $vice_president['image']= $path.'/'. $file_name;
         }
 
         $request->validate([
@@ -60,7 +60,7 @@ class VPMemberController extends Controller
             // 'image' => 'required|image|mimes:jpeg,png,jpg,JPEG,PNG,JPG|max:2048',
         ]);
 
-        $vice_pre->save();
+        $vice_president->save();
         session()->flash('success', 'Member Created Successfully');
         return redirect()->route('admin.vice-president.index');
     }
@@ -85,7 +85,7 @@ class VPMemberController extends Controller
     public function edit($id)
     {
         $v_p_members = VPMember::findOrFail($id);
-        return view('admin.pages.vice_pre.edit',compact('v_p_members'));
+        return view('admin.pages.vice_president.edit',compact('v_p_members'));
     }
 
     /**
@@ -97,12 +97,12 @@ class VPMemberController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $vice_pre = VPMember::findOrFail($id);
-        $vice_pre->name = $request->input('name');
-        $vice_pre->designation = $request->input('designation');
-        $vice_pre->job = $request->input('job');
-        $vice_pre->job_location = $request->input('job_location');
-        $vice_pre->status = $request->input('status');
+        $vice_president = VPMember::findOrFail($id);
+        $vice_president->name = $request->input('name');
+        $vice_president->designation = $request->input('designation');
+        $vice_president->job = $request->input('job');
+        $vice_president->job_location = $request->input('job_location');
+        $vice_president->status = $request->input('status');
 
         if($request->hasfile('image'))
         {
@@ -110,7 +110,7 @@ class VPMemberController extends Controller
             $path ='images/member';
             $file_name = time() . $file->getClientOriginalName();
             $file->move($path, $file_name);
-            $vice_pre['image']= $path.'/'. $file_name;
+            $vice_president['image']= $path.'/'. $file_name;
         }
 
         $request->validate([
@@ -119,9 +119,9 @@ class VPMemberController extends Controller
 
         ]);
 
-        $vice_pre->save();
-        session()->flash('success', 'vice_pre Updated Successfully');
-        return redirect()->route('admin.vice_president.index');
+        $vice_president->save();
+        session()->flash('success', 'vice_president Updated Successfully');
+        return redirect()->route('admin.vice_presidentsident.index');
     }
 
     /**
@@ -133,13 +133,13 @@ class VPMemberController extends Controller
     public function destroy($id)
     {
 
-        $vice_pre = VPMember::findOrFail($id);
-        if($vice_pre){
-            if(file_exists(($vice_pre->image))){
-                unlink($vice_pre->image);
+        $vice_president = VPMember::findOrFail($id);
+        if($vice_president){
+            if(file_exists(($vice_president->image))){
+                unlink($vice_president->image);
             }
 
-            $vice_pre->delete();
+            $vice_president->delete();
             session()->flash('success', 'Slider deleted successfully');
             return back();
         }

@@ -50,7 +50,11 @@ class User extends Authenticatable
 
         'nid','dob', 'religion','blood',
 
-        'member_type','ex_member', 'status','advisor',
+        'member_type','ex_member', 'advisor',
+
+        'edu','m_designation', 'at_location',
+
+        'status',
 
     ];
 

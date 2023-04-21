@@ -1256,3 +1256,11 @@ a:focus {
 .icon-demo-content .col-sm-6:hover i {
   color: #03a9f4;
 }
+
+
+.new_btn{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
