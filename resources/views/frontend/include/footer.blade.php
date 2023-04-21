@@ -12,7 +12,7 @@
 
 <body>
 
-    <div class="footer-dark">
+    <div style="background-color: rgb(9, 62, 97) " class="footer-dark">
         <footer>
             <div class="container">
                 <div class="row">

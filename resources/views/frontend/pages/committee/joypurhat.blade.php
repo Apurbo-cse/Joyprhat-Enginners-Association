@@ -6,12 +6,12 @@
 
 @section('content')
 
-    <div class="container mt-5 mb-5">
+<div class="container mt-5 mb-5">
         <div class="container">
 
             <div class="row ">
+           
                 @foreach ($thana_committee_types as $thana)
-
                 <div class=" d-flex justify-content-center">
                     <div class="header_about">
                         <img src="{{ asset('frontend/images/logo.png') }}" style="width:120px;padding-top:2px;">
@@ -33,10 +33,15 @@
                 </div>
                 <div class="row mt-3">
                     <p class="text-gray text-bold text-gray-100 text-success text-justify">
-                        {{ $thana->description }}
+                    {!! $thana->description !!}
                     </p>
                 </div>
+
+               
                 @endforeach
+
+              
+
 
                 <div class="row justify-content-center mt-4 text-center">
                     @foreach ($thana_committees as $thana)
@@ -48,13 +53,13 @@
                             </div>
                         </div>
                     @endforeach
-                </div>
+</div>
+                   
 
             </div>
 
         </div>
     </div>
 
-    {{-- নিম্নোক্ত কার্যনির্বাহী সম্মানিত সদস্যবৃন্দের জয়পুরহাট ইঞ্জিনিয়ার এসোসিয়েশন কর্তৃক  ক্ষেতলাল থানা কমিটিতে অনুমোদন করা হলো। --}}
 
 @endsection
