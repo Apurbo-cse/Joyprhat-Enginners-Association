@@ -14,19 +14,15 @@
     </div>
     <!--- Divider -->
     <div id="sidebar-menu">
+        
         <ul>
             <li>
                 <a href="#" class="waves-effect"><i class="ti-home"></i><span> Dashboard </span></a>
             </li>
 
-
-            {{-- <li class="has_sub">
-                <a href="javascript:void(0);" class="waves-effect"><i class="ti-user"></i> <span> Users </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
-                <ul class="list-unstyled">
-                    <li><a href="{{url('http://127.0.0.1:8000/dashboard/user')}}">User List</a></li>
-                    <li><a href="#">Create New User</a></li>
-                </ul>
-            </li> --}}
+            <li>
+                <a href="{{route('admin.user.index')}}" class="waves-effect"><i class="ti-home"></i><span> User </span></a>
+            </li>
 
             <li class="has_sub">
                 <a href="javascript:void(0);" class="waves-effect"><i class="ti-user"></i> <span> Member </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
@@ -54,7 +50,6 @@
                 </ul>
             </li>
 
-            {{-- <li class=""><a href="{{route('admin.post.index')}}">Blog</a></li> --}}
             <li>
                 <a href="{{ route ('admin.post.index') }}" class="waves-effect"><i class="mdi mdi-blogger"></i><span> Blog </span></a>
             </li>

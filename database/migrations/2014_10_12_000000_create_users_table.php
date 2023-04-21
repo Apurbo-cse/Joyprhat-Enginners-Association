@@ -82,6 +82,12 @@ class CreateUsersTable extends Migration
             $table->string('religion')->nullable();
             $table->string('blood')->nullable();
 
+            $table->string('member_type')->nullable();
+            $table->string('ex_member')->nullable();
+            $table->string('advisor')->nullable();
+            $table->string('status')->nullable();
+
+
             $table->rememberToken();
             $table->timestamps();
         });

@@ -40,7 +40,7 @@ Route::group(['prefix' => 'dashboard/', 'as' => 'admin.', 'middleware' => ['auth
     Route::resource('thana_type', ThanaCommitteeTypeController::class);
 
     Route::resource('thana', ThanaCommitteeController::class);
-    Route::resource('profile', UserController::class);
+    Route::resource('user', UserController::class);
     Route::group(['prefix' => 'int-thana/', 'as' => 'int_thana.'], function () {
         Route::get('joypurhat', [IntThanaController::class, 'joypurhat'])->name('joypurhat');
         Route::get('panchbibi', [IntThanaController::class, 'panchbibi'])->name('panchbibi');
