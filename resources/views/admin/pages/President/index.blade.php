@@ -52,11 +52,18 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{$president->name}}</td>
-                                <td>{{$president->email}}</td>
-                                <td>{{$president->phone}}</td>
-                                <td>{{$president->course_name}}</td>
+                                <td>{{$president->edu}}</td>
+                                <td>{{$president->m_designation}}</td>
+                                <td>{{$president->at_location}}</td>
                                 <td class="text-center">
                                     <img src="{{ asset($president->image) }}"  width="20%" alt="">
+                                </td>
+                                <td>
+                                    @if ($president->status == 0)
+                                        <a type="button" class="btn btn-danger waves-effect waves-light">Ex President</a>
+                                    @else
+                                    <a type="button" class="btn btn-success waves-effect waves-light">President</a>
+                                    @endif
                                 </td>
                                 <td class="d-flex">
                                     <a class="btn btn-success d-inline-block" href="{{ route('admin.president.edit',$president->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>

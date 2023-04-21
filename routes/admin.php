@@ -70,6 +70,7 @@ Route::group(['prefix' => 'dashboard/', 'as' => 'admin.', 'middleware' => ['auth
 
 
     Route::get('president-make-as-user', [OtherController::class, 'president_as_user'])->name('president_as_user');
+    Route::get('vice-president-make-as-user', [OtherController::class, 'vice_president_as_user'])->name('vice_president_as_user');
 
 
     Route::group(['prefix' => 'category/', 'as' => 'category.'], function () {

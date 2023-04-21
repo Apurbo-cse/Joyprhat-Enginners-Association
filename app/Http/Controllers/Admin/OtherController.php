@@ -13,4 +13,16 @@ class OtherController extends Controller
         $users= User::orderBy('created_at', 'DESC')->paginate(20);
         return view('admin.pages.president.user', compact('users'));
     }
+
+
+
+    public function vice_president_as_user()
+    {
+        $users= User::orderBy('created_at', 'DESC')->paginate(20);
+        return view('admin.pages.vice_president.user', compact('users'));
+    }
+
+
+
+    
 }

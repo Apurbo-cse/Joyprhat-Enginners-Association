@@ -8,8 +8,8 @@
                 <h4 class="pull-left page-title">Create New President</h4>
                 <ol class="breadcrumb pull-right">
                     <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-                    <li><a href="{{route('admin.member.index')}}">President List</a></li>
-                    <li class="active">Create President</li>
+                    <li><a href="{{route('admin.member.index')}}">Vice President </a></li>
+                    <li class="active">Create Vice President</li>
                 </ol>
                 <div class="clearfix"></div>
             </div>
@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="panel panel-primary">
-                <div class="panel-heading"><h3 class="panel-title">President Form</h3></div>
+                <div class="panel-heading"><h3 class="panel-title">Vice President Form</h3></div>
                 <div class="panel-body">
                     <form class="form-horizontal" action="{{route('admin.president.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
@@ -66,7 +66,7 @@
                             <label class="col-md-2 control-label">Member</label>
                             <div class="col-md-10">
                             <select class="form-control" name="member_type" id="exampleFormControlSelect1">
-                                <option selected>President</option>
+                                <option selected>Vice President</option>
                             </select>   
                             </div>
                         </div>
@@ -92,16 +92,6 @@
                                     <label for="active">Runing President </label>
                                 </div>
                                 @error('status')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-2 control-label">Password</label>
-                            <div class="col-md-10">
-                                <input value="{{old('password')}}" name="password" type="password" id="name" class="form-control" placeholder="name">
-                                @error('name')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>

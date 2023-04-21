@@ -29,7 +29,7 @@ class VicePresidentController extends Controller
     public function create()
     {
         
-        return view('admin.pages.vice-president.create');
+        return view('admin.pages.vice_president.create');
     }
 
     /**

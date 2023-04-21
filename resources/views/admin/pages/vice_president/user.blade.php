@@ -18,8 +18,8 @@
                 <h4 class="pull-left page-title">List Of president</h4>
                 <ol class="breadcrumb pull-right">
                     <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a href="{{route('admin.president.create')}}">Create</a></li>
-                    <li><a href="{{route('admin.president.index')}}">President List</a></li>
+                    <li><a href="{{route('admin.vice-president.create')}}">Create</a></li>
+                    <li><a href="{{route('admin.vice-president.index')}}">Vice President</a></li>
                     <li class="active">Make as User</li>
                 </ol>
                 <div class="clearfix"></div>
@@ -30,7 +30,7 @@
         <div class="col-md-12">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">President List</h3>
+                    <h3 class="panel-title">Vice President List</h3>
                 </div>
                 <div class="panel-body">
 
@@ -57,8 +57,8 @@
                                     <img src="{{ asset($president->image) }}"  width="20%" alt="">
                                 </td>
                                 <td class="d-flex">
-                                    <a class="btn btn-success d-inline-block" href="{{ route('admin.president.edit',$president->id) }}"><i class="fa fa-check" aria-hidden="true"></i></a>
-                                    <a class="btn btn-info d-inline-block" href="{{ route('admin.president.edit',$president->id) }}"><i class="fa fa-edit" aria-hidden="true"></i></a>
+                                    <a class="btn btn-success d-inline-block" href="{{ route('admin.vice-president.edit',$president->id) }}"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                    <a class="btn btn-info d-inline-block" href="{{ route('admin.vice-president.edit',$president->id) }}"><i class="fa fa-edit" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
 
