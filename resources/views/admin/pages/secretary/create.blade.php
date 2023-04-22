@@ -70,6 +70,9 @@
                                 <option >General Secretary</option>
                                 <option >Asst. General Secretary</option>
                                 <option >Joint General Secretary</option>
+                                <option >Organizing Secretary</option>
+                                <option >Finance Secretary</option>
+                                <option >Assit. Finance Secretary</option>
                             </select>   
                             </div>
                         </div>
