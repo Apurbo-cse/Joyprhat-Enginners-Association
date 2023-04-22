@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
-use App\Models\SMember;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
-class SMemberController extends Controller
+class SecretaryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,12 @@ class SMemberController extends Controller
      */
     public function index()
     {
-       $s_members= SMember::orderBy('created_at', 'ASC')->paginate(20);
-        return view('admin.pages.secretary.index',compact('s_members'));
+        $users= User::orderBy('created_at', 'DESC')->paginate(20);
+        $users = DB::table('users')->whereIn('member_type', ['General Secretary' , 'Asst. General Secretary', 'Joint General Secretary'])->get();
+        return view('admin.pages.secretary.index', compact('users'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -36,32 +40,30 @@ class SMemberController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-   {
-        $secretary =new SMember();
+    {
 
-        $secretary->name = $request->input('name');
-        $secretary->designation = $request->input('designation');
-        $secretary->job = $request->input('job');
-        $secretary->job_location = $request->input('job_location');
-        $secretary->status = $request->input('status');
+
+        $member =new User();
+
+        $member->member_type = $request->input('member_type');
+        $member->name = $request->input('name');
+        $member->edu = $request->input('edu');
+        $member->m_designation = $request->input('m_designation');
+        $member->at_location = $request->input('at_location');
+        $member->status = $request->input('status');
 
         if($request->hasfile('image'))
         {
             $file = $request->file('image');
-            $path ='images/member';
+            $path ='images/user';
             $file_name = time() . $file->getClientOriginalName();
             $file->move($path, $file_name);
-            $secretary['image']= $path.'/'. $file_name;
+            $member['image']= $path.'/'. $file_name;
         }
-
-        $request->validate([
-            'name'=>'required',
-            'status'=>'required|in:'.SMember::ACTIVE_STATUS.','.SMember::INACTIVE_STATUS,
-            // 'image' => 'required|image|mimes:jpeg,png,jpg,JPEG,PNG,JPG|max:2048',
-        ]);
-
-        $secretary->save();
-        session()->flash('success', 'Member Created Successfully');
+    
+        
+        $member->save();
+        session()->flash('success', 'secretary Created Successfully');
         return redirect()->route('admin.secretary.index');
     }
 
@@ -73,7 +75,7 @@ class SMemberController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
 
     /**
@@ -84,7 +86,7 @@ class SMemberController extends Controller
      */
     public function edit($id)
     {
-        $secretary = SMember::findOrFail($id);
+        $secretary = User::findOrFail($id);
         return view('admin.pages.secretary.edit',compact('secretary'));
     }
 
@@ -97,30 +99,22 @@ class SMemberController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $secretary = SMember::findOrFail($id);
-        $secretary->name = $request->input('name');
-        $secretary->designation = $request->input('designation');
-        $secretary->job = $request->input('job');
-        $secretary->job_location = $request->input('job_location');
+        $secretary = User::findOrFail($id);
+        $secretary->member_type = $request->input('member_type');
+        $secretary->edu = $request->input('edu');
+        $secretary->m_designation = $request->input('m_designation');
+        $secretary->at_location = $request->input('at_location');
         $secretary->status = $request->input('status');
 
         if($request->hasfile('image'))
         {
             $file = $request->file('image');
-            $path ='images/member';
+            $path ='images/user';
             $file_name = time() . $file->getClientOriginalName();
             $file->move($path, $file_name);
             $secretary['image']= $path.'/'. $file_name;
         }
-
-        $request->validate([
-            'name'=>'required',
-            'status'=>'required|in:'.SMember::ACTIVE_STATUS.','.SMember::INACTIVE_STATUS,
-
-        ]);
-
-        $secretary->save();
-        session()->flash('success', 'secretary Updated Successfully');
+        session()->flash('success', 'user Updated Successfully');
         return redirect()->route('admin.secretary.index');
     }
 
@@ -132,16 +126,6 @@ class SMemberController extends Controller
      */
     public function destroy($id)
     {
-
-        $secretary = SMember::findOrFail($id);
-        if($secretary){
-            if(file_exists(($secretary->image))){
-                unlink($secretary->image);
-            }
-
-            $secretary->delete();
-            session()->flash('success', 'Slider deleted successfully');
-            return back();
-        }
+        //
     }
 }

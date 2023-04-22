@@ -11,7 +11,7 @@ use App\Http\Controllers\Admin\IntThanaController;
 use App\Http\Controllers\Admin\MemberController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ServiceController;
-use App\Http\Controllers\Admin\SMemberController;
+
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\ThanaCommitteeController;
 use App\Http\Controllers\Admin\ThanaCommitteeTypeController;
@@ -19,7 +19,11 @@ use App\Http\Controllers\Admin\ThanaCommitteeTypeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\PresidentController;
 use App\Http\Controllers\Admin\VicePresidentController;
+use App\Http\Controllers\Admin\SecretaryController;
+
 use App\Http\Controllers\Admin\OtherController;
+
+
 
 
 /*
@@ -60,8 +64,8 @@ Route::group(['prefix' => 'dashboard/', 'as' => 'admin.', 'middleware' => ['auth
 
     Route::resource('president', PresidentController::class);
     Route::resource('vice-president', VicePresidentController::class);
-    
-    Route::resource('secretary', SMemberController::class);
+    Route::resource('secretary', SecretaryController::class);
+
     Route::resource('member', MemberController::class);
     Route::resource('eternal', EternalController::class);
     Route::resource('service', ServiceController::class);
@@ -71,7 +75,7 @@ Route::group(['prefix' => 'dashboard/', 'as' => 'admin.', 'middleware' => ['auth
 
     Route::get('president-make-as-user', [OtherController::class, 'president_as_user'])->name('president_as_user');
     Route::get('vice-president-make-as-user', [OtherController::class, 'vice_president_as_user'])->name('vice_president_as_user');
-
+    Route::get('secretary-make-as-user', [OtherController::class, 'secretary_as_user'])->name('secretary_as_user');
 
     Route::group(['prefix' => 'category/', 'as' => 'category.'], function () {
         Route::get('/', [CategoryController::class, 'index'])->name('index');

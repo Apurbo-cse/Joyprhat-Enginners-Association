@@ -1,15 +1,15 @@
 @extends('admin.layouts.master')
-@section('title', 'Create New president')
+@section('title', 'Create New President')
 @section('content')
     <!-- Page-Title -->
     <div class="row">
         <div class="col-sm-12">
             <div class="page-header-title">
-                <h4 class="pull-left page-title">Create New president</h4>
+                <h4 class="pull-left page-title">Create New President</h4>
                 <ol class="breadcrumb pull-right">
                     <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-                    <li><a href="{{route('admin.president.index')}}">president List</a></li>
-                    <li class="active">Create president</li>
+                    <li><a href="{{route('admin.president.index')}}">president</a></li>
+                    <li class="active">Create President</li>
                 </ol>
                 <div class="clearfix"></div>
             </div>
@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="panel panel-primary">
-                <div class="panel-heading"><h3 class="panel-title">president Form</h3></div>
+                <div class="panel-heading"><h3 class="panel-title">President Form</h3></div>
                 <div class="panel-body">
                     <form class="form-horizontal" action="{{route('admin.president.update', $president->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
@@ -27,29 +27,44 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Name</label>
                             <div class="col-md-10">
-                                <input value="{{$president->name}}" disabled type="text" id="name" class="form-control" placeholder="name">
+                                <input value="{{$president->name}}" disabled type="text" id="name" class="form-control" placeholder="Enter a Name">
                             
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-2 control-label">Email</label>
+                            <label class="col-md-2 control-label">EmaEdu / Professionil</label>
                             <div class="col-md-10">
-                                <input value="{{$president->email}}" disabled class="form-control" rows="5" placeholder="Content">
+                                <input name="edu" value="{{$president->edu}}"  class="form-control" rows="5" placeholder="Enter Edu / Profession">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-2 control-label">Phone</label>
+                            <label class="col-md-2 control-label">Designation</label>
                             <div class="col-md-10">
-                                <input name="job" value="{{$president->phone}}" disabled class="form-control" rows="5" placeholder="Content">
+                                <input name="m_designation" value="{{$president->m_designation}}"  class="form-control" rows="5"  placeholder="Enter a Designation">
                               
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Office Name / Address</label>
+                            <div class="col-md-10">
+                                <input name="at_location" value="{{$president->m_designation}}"  class="form-control" rows="5"  placeholder="Enter a Address">
+                              
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <label class="col-md-2 control-label">Image</label>
                             <div class="col-md-10">
+                                <input type="file" class="form-control" name="image" >
+                                @error('image')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                @if($president->image != null)
                                     <img src="{{ asset($president->image) }}" width="20%">
+                                @endif
                             </div>
                         </div>
 
@@ -67,11 +82,11 @@
                             <div class="col-md-10">
                                 <div class="radio radio-info radio-inline">
                                     <input @if($president->status == '1') checked   @endif type="radio" id="active" value="1" name="status">
-                                    <label for="active"> President </label>
+                                    <label for="active"> Active </label>
                                 </div>
                                 <div class="radio radio-inline">
                                     <input @if($president->status == '0') checked   @endif type="radio" id="inactive" value="0" name="status">
-                                    <label for="inactive"> Ex President </label>
+                                    <label for="inactive"> Inactive </label>
                                 </div>
                                 @error('status')
                                 <div class="text-danger">{{ $message }}</div>

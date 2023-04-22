@@ -197,7 +197,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (12, '2022_04_30_110957_create_tags_table', 1),
 (13, '2022_05_02_040928_create_members_table', 1),
 (14, '2022_05_02_085115_create_p_members_table', 1),
-(15, '2022_05_02_102251_create_s_members_table', 1),
+(15, '2022_05_02_102251_create_secretary_table', 1),
 (16, '2022_05_02_105227_create_v_p_members_table', 1),
 (17, '2022_05_02_144856_create_eternals_table', 1),
 (18, '2022_05_02_160225_create_services_table', 1),
@@ -364,10 +364,10 @@ INSERT INTO `sliders` (`id`, `title`, `description`, `status`, `image`, `created
 -- --------------------------------------------------------
 
 --
--- Table structure for table `s_members`
+-- Table structure for table `secretary`
 --
 
-CREATE TABLE `s_members` (
+CREATE TABLE `secretary` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `designation` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -646,9 +646,9 @@ ALTER TABLE `sliders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `s_members`
+-- Indexes for table `secretary`
 --
-ALTER TABLE `s_members`
+ALTER TABLE `secretary`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -773,9 +773,9 @@ ALTER TABLE `sliders`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `s_members`
+-- AUTO_INCREMENT for table `secretary`
 --
-ALTER TABLE `s_members`
+ALTER TABLE `secretary`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --

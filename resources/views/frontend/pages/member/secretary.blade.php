@@ -1,10 +1,10 @@
-@foreach($s_members as $member)
+@foreach($secretary as $member)
 <div class="col-md-3">
     <div class="card mb-4 mx-2">
         <img  class="PreImg" src="{{ asset( $member->image )}}" alt="">
             <h4 class="pre sup-title">Secre<span>tary</span></h4>
             <p class=" ght text-center">{{ $member->name }}</p>
-            <b class="text-center text-success mb-2">{{ $member->designation }}</b>
+            <b class="text-center text-success mb-2">{{ $member->m_designation }}</b>
             <!-- header-bot -->
             {{-- <div class=" ">
                 <ul class="social-nav bgs model-3d-0 footer-social w3_agile_social">

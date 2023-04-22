@@ -13,7 +13,7 @@ class CreateSMembersTable extends Migration
      */
     public function up()
     {
-        Schema::create('s_members', function (Blueprint $table) {
+        Schema::create('secretary', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('designation');
@@ -32,6 +32,6 @@ class CreateSMembersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('s_members');
+        Schema::dropIfExists('secretary');
     }
 }

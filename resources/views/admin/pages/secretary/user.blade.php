@@ -19,8 +19,8 @@
                 <ol class="breadcrumb pull-right">
                     <li><a href="/dashboard">Dashboard</a></li>
                     <li><a href="{{route('admin.secretary.create')}}">Create</a></li>
-                    <li><a href="{{route('admin.secretary_as_user')}}">Make as User</a></li>
-                    <li class="active">Secretary </li>
+                    <li><a href="{{route('admin.secretary.index')}}">Secretary </a></li>
+                    <li class="active">Make as User</li>
                 </ol>
                 <div class="clearfix"></div>
             </div>
@@ -30,7 +30,7 @@
         <div class="col-md-12">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">secretary List</h3>
+                    <h3 class="panel-title">Secretary List</h3>
                 </div>
                 <div class="panel-body">
 
@@ -39,6 +39,8 @@
                         <tr>
                             <th class="text-center" style="width: 10px">SL#</th>
                             <th class="text-center" >Name</th>
+                            <th class="text-center" >Email</th>
+                            <th class="text-center" >Phone</th>
                             <th class="text-center " >Edu / Profession</th>
                             <th class="text-center" >Designation</th>
                             <th class="text-center" >Location</th>
@@ -51,8 +53,10 @@
                         <tbody>
                         @foreach( $users as $secretary)
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
+                            <td>{{ $loop->iteration }}</td>
                                 <td>{{$secretary->name}}</td>
+                                <td>{{$secretary->email}}</td>
+                                <td>{{$secretary->phone}}</td>
                                 <td>{{$secretary->edu}}</td>
                                 <td>{{$secretary->m_designation}}</td>
                                 <td>{{$secretary->at_location}}</td>
@@ -60,10 +64,8 @@
                                     <img src="{{ asset($secretary->image) }}"  width="20%" alt="">
                                 </td>
                                 <td>{{$secretary->member_type}}</td>
-                               
-                                
                                 <td class="d-flex">
-                                    <a class="btn btn-success d-inline-block" href="{{ route('admin.secretary.edit',$secretary->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a class="btn btn-success d-inline-block" href="{{ route('admin.secretary.edit',$secretary->id) }}"><i class="fa fa-check" aria-hidden="true"></i></a>
                                     <a class="btn btn-info d-inline-block" href="{{ route('admin.secretary.edit',$secretary->id) }}"><i class="fa fa-edit" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
@@ -101,4 +103,5 @@
     <!-- Datatable init js -->
     <script src="{{asset('admin/pages/datatables.init.js')}}"></script>
 
+    
 @endsection

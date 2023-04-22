@@ -8,7 +8,7 @@
                 <h4 class="pull-left page-title">Create New President</h4>
                 <ol class="breadcrumb pull-right">
                     <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-                    <li><a href="{{route('admin.member.index')}}">Vice President </a></li>
+                    <li><a href="{{route('admin.vice-president.index')}}">Vice President </a></li>
                     <li class="active">Create Vice President</li>
                 </ol>
                 <div class="clearfix"></div>

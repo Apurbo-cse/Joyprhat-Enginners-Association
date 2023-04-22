@@ -101,7 +101,20 @@ class PresidentController extends Controller
     {
         $president = User::findOrFail($id);
         $president->member_type = $request->input('member_type');
+        $president->edu = $request->input('edu');
+        $president->m_designation = $request->input('m_designation');
+        $president->at_location = $request->input('at_location');
         $president->status = $request->input('status');
+
+        if($request->hasfile('image'))
+        {
+            $file = $request->file('image');
+            $path ='images/user';
+            $file_name = time() . $file->getClientOriginalName();
+            $file->move($path, $file_name);
+            $president['image']= $path.'/'. $file_name;
+        }
+
         $president->save();
         session()->flash('success', 'user Updated Successfully');
         return redirect()->route('admin.president.index');

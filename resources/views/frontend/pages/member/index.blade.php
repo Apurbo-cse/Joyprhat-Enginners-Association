@@ -24,7 +24,6 @@
 <div class="bg-gradient-warning border-2">
     <div class="container mb-4 mt-3 ">
         <div class="row">
-            @include('frontend.pages.member.member')
         </div>
     </div>
 </div>

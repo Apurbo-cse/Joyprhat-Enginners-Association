@@ -23,6 +23,12 @@ class OtherController extends Controller
     }
 
 
+    public function secretary_as_user()
+    {
+        $users= User::orderBy('created_at', 'DESC')->paginate(20);
+        return view('admin.pages.secretary.user', compact('users'));
+    }
+
 
     
 }

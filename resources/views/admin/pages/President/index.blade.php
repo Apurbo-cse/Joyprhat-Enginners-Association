@@ -39,10 +39,11 @@
                         <tr>
                             <th class="text-center" style="width: 10px">SL#</th>
                             <th class="text-center" >Name</th>
-                            <th class="text-center " >Email</th>
-                            <th class="text-center" >Phone</th>
-                            <th class="text-center" >Edudaction</th>
+                            <th class="text-center " >Edu / Profession</th>
+                            <th class="text-center" >Designation</th>
+                            <th class="text-center" >Location</th>
                             <th class="text-center" style="40%" >Image</th>
+                            <th class="text-center" style="40%" >Status</th>
                             <th class="text-center" style="width: 12%">Actions</th>
                         </tr>
                         </thead>
@@ -58,13 +59,7 @@
                                 <td class="text-center">
                                     <img src="{{ asset($president->image) }}"  width="20%" alt="">
                                 </td>
-                                <td>
-                                    @if ($president->status == 0)
-                                        <a type="button" class="btn btn-danger waves-effect waves-light">Ex President</a>
-                                    @else
-                                    <a type="button" class="btn btn-success waves-effect waves-light">President</a>
-                                    @endif
-                                </td>
+                                <td>{{$president->member_type}}</td>
                                 <td class="d-flex">
                                     <a class="btn btn-success d-inline-block" href="{{ route('admin.president.edit',$president->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                     <a class="btn btn-info d-inline-block" href="{{ route('admin.president.edit',$president->id) }}"><i class="fa fa-edit" aria-hidden="true"></i></a>

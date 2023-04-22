@@ -1,5 +1,5 @@
 
- @foreach($p_members as $president)
+ @foreach($presidents as $president)
  <div class="supervisor cons">
 
      <div class="col-left">
@@ -13,9 +13,6 @@
              {{ $president->name }}
          </h2>
          <div>
-             <b class="pro-type"> {{ $president->designation }}</b><br>
-             <b class="pro-type"> {{ $president->job }}</b><br>
-             <b class="pro-type"> {{ $president->job_location }}
          <br>
          <!-- header-bot -->
          <div class="col-md-6 agileits-social top_content">

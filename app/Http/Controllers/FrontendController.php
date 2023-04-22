@@ -13,12 +13,12 @@ class FrontendController extends Controller
     public function index()
     {
         $sliders = DB::table('sliders')->where('status', 'active')->limit(4)->get();
-        // $p_members = DB::table('p_members')->where('status', '1')->limit(1)->get();
+        // $users = DB::table('users')->where('status', '1')->limit(1)->get();
         $eternals = DB::table('eternals')->where('status', '1')->get();
         $services = DB::table('services')->where('status', '1')->get();
         $advisors = DB::table('advisors')->where('status', '1')->limit(4)->get();
         return view('frontend.home.index',compact('sliders','eternals','services','advisors',
-        // 'p_members'
+        // 'users'
     ));
     }
 
@@ -126,11 +126,10 @@ class FrontendController extends Controller
 
     public function convening_member()
     {
-        $p_members = DB::table('p_members')->where('status', '1')->orderBy('id', 'desc')->limit(1)->get();
-        $v_p_members = DB::table('v_p_members')->where('status', '1')->orderBy('id', 'desc')->limit(2)->get();
-        $s_members = DB::table('s_members')->where('status', '1')->orderBy('id', 'desc')->limit(1)->get();
-        $members = DB::table('members')->where('status', '1')->get();
-        return view('frontend.pages.member.index',compact('p_members','v_p_members','s_members','members'));
+        $presidents = DB::table('users')->whereIn('member_type', ['President'])->orderBy('created_at', 'ASC')->limit(1)->get();
+        $vice_presidents = DB::table('users')->whereIn('member_type', ['Vice President'])->orderBy('created_at', 'ASC')->limit(2)->get();
+        $secretary = DB::table('users')->whereIn('member_type', ['General Secretary'])->orderBy('created_at', 'ASC')->limit(1)->get();
+        return view('frontend.pages.member.index',compact('presidents','vice_presidents','secretary'));
     }
 
 

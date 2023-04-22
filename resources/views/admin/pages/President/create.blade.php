@@ -97,16 +97,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="col-md-2 control-label">Password</label>
-                            <div class="col-md-10">
-                                <input value="{{old('password')}}" name="password" type="password" id="name" class="form-control" placeholder="name">
-                                @error('name')
-                                <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                            </div>
-                        </div>
-
                         <div class="pull-right">
                             <button type="submit" class="btn btn-info waves-effect waves-light">Save</button>
                         </div>

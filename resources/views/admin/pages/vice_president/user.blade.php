@@ -39,23 +39,31 @@
                         <tr>
                             <th class="text-center" style="width: 10px">SL#</th>
                             <th class="text-center" >Name</th>
-                            <th class="text-center " >Email</th>
+                            <th class="text-center" >Email</th>
                             <th class="text-center" >Phone</th>
+                            <th class="text-center " >Edu / Profession</th>
+                            <th class="text-center" >Designation</th>
+                            <th class="text-center" >Location</th>
                             <th class="text-center" style="40%" >Image</th>
-                            <th class="text-center" style="width: 12%">Make as President</th>
+                            <th class="text-center" style="40%" >Status</th>
+                            <th class="text-center" style="width: 12%">Actions</th>
                         </tr>
                         </thead>
 
                         <tbody>
                         @foreach( $users as $president)
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
+                            <td>{{ $loop->iteration }}</td>
                                 <td>{{$president->name}}</td>
                                 <td>{{$president->email}}</td>
                                 <td>{{$president->phone}}</td>
+                                <td>{{$president->edu}}</td>
+                                <td>{{$president->m_designation}}</td>
+                                <td>{{$president->at_location}}</td>
                                 <td class="text-center">
                                     <img src="{{ asset($president->image) }}"  width="20%" alt="">
                                 </td>
+                                <td>{{$president->member_type}}</td>
                                 <td class="d-flex">
                                     <a class="btn btn-success d-inline-block" href="{{ route('admin.vice-president.edit',$president->id) }}"><i class="fa fa-check" aria-hidden="true"></i></a>
                                     <a class="btn btn-info d-inline-block" href="{{ route('admin.vice-president.edit',$president->id) }}"><i class="fa fa-edit" aria-hidden="true"></i></a>

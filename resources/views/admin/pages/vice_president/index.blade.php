@@ -51,7 +51,7 @@
                         <tbody>
                         @foreach( $users as $president)
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
+                            <td>{{ $loop->iteration }}</td>
                                 <td>{{$president->name}}</td>
                                 <td>{{$president->edu}}</td>
                                 <td>{{$president->m_designation}}</td>
@@ -59,13 +59,7 @@
                                 <td class="text-center">
                                     <img src="{{ asset($president->image) }}"  width="20%" alt="">
                                 </td>
-                                <td>
-                                    @if ($president->status == 0)
-                                        <a type="button" class="btn btn-danger waves-effect waves-light">Ex Vice President</a>
-                                    @else
-                                    <a type="button" class="btn btn-success waves-effect waves-light">Vice President</a>
-                                    @endif
-                                </td>
+                                <td>{{$president->member_type}}</td>
                                 <td class="d-flex">
                                     <a class="btn btn-success d-inline-block" href="{{ route('admin.vice-president.edit',$president->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                     <a class="btn btn-info d-inline-block" href="{{ route('admin.vice-president.edit',$president->id) }}"><i class="fa fa-edit" aria-hidden="true"></i></a>

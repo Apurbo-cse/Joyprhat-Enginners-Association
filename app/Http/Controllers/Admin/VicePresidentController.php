@@ -99,8 +99,19 @@ class VicePresidentController extends Controller
     {
         $vice_president = User::findOrFail($id);
         $vice_president->member_type = $request->input('member_type');
+        $vice_president->edu = $request->input('edu');
+        $vice_president->m_designation = $request->input('m_designation');
+        $vice_president->at_location = $request->input('at_location');
         $vice_president->status = $request->input('status');
-        $vice_president->save();
+
+        if($request->hasfile('image'))
+        {
+            $file = $request->file('image');
+            $path ='images/user';
+            $file_name = time() . $file->getClientOriginalName();
+            $file->move($path, $file_name);
+            $vice_president['image']= $path.'/'. $file_name;
+        }
         session()->flash('success', 'user Updated Successfully');
         return redirect()->route('admin.vice-president.index');
     }
