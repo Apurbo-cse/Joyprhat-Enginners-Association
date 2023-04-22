@@ -20,6 +20,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\PresidentController;
 use App\Http\Controllers\Admin\VicePresidentController;
 use App\Http\Controllers\Admin\SecretaryController;
+use App\Http\Controllers\Admin\ExecutiveMemberController;
 
 use App\Http\Controllers\Admin\OtherController;
 
@@ -65,6 +66,7 @@ Route::group(['prefix' => 'dashboard/', 'as' => 'admin.', 'middleware' => ['auth
     Route::resource('president', PresidentController::class);
     Route::resource('vice-president', VicePresidentController::class);
     Route::resource('secretary', SecretaryController::class);
+    Route::resource('exicutive', ExecutiveMemberController::class);
 
     Route::resource('member', MemberController::class);
     Route::resource('eternal', EternalController::class);
@@ -76,6 +78,7 @@ Route::group(['prefix' => 'dashboard/', 'as' => 'admin.', 'middleware' => ['auth
     Route::get('president-make-as-user', [OtherController::class, 'president_as_user'])->name('president_as_user');
     Route::get('vice-president-make-as-user', [OtherController::class, 'vice_president_as_user'])->name('vice_president_as_user');
     Route::get('secretary-make-as-user', [OtherController::class, 'secretary_as_user'])->name('secretary_as_user');
+    Route::get('exicutive-make-as-user', [OtherController::class, 'exicutive_as_user'])->name('exicutive_as_user');
 
     Route::group(['prefix' => 'category/', 'as' => 'category.'], function () {
         Route::get('/', [CategoryController::class, 'index'])->name('index');

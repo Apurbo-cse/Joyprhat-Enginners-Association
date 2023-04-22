@@ -30,7 +30,7 @@
                     <li><a href="{{ route('admin.president.index') }}">President</a></li>
                     <li><a href="{{ route('admin.vice-president.index') }}">Vice President</a></li>
                     <li><a href="{{ route('admin.secretary.index') }}">Seretary</a></li>
-                    <li><a href="{{ route('admin.member.index') }}">Member</a></li>
+                    <li><a href="{{ route('admin.exicutive.index') }}">Exicutive Member</a></li>
                 </ul>
             </li>
 

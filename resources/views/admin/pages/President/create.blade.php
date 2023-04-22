@@ -1,26 +1,27 @@
 @extends('admin.layouts.master')
-@section('title', 'Create New President')
+@section('title', 'Create New Exicutive Member')
 @section('content')
     <!-- Page-Title -->
     <div class="row">
         <div class="col-sm-12">
             <div class="page-header-title">
-                <h4 class="pull-left page-title">Create New President</h4>
+                <h4 class="pull-left page-title">Create New Exicutive Member</h4>
                 <ol class="breadcrumb pull-right">
                     <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-                    <li><a href="{{route('admin.member.index')}}">President List</a></li>
-                    <li class="active">Create President</li>
+                    <li><a href="{{route('admin.member.index')}}">Exicutive Member </a></li>
+                    <li class="active">Create Exicutive Member</li>
                 </ol>
                 <div class="clearfix"></div>
             </div>
         </div>
     </div>
+    
     <div class="row">
         <div class="col-sm-12">
             <div class="panel panel-primary">
-                <div class="panel-heading"><h3 class="panel-title">President Form</h3></div>
+                <div class="panel-heading"><h3 class="panel-title">Exicutive Member Form</h3></div>
                 <div class="panel-body">
-                    <form class="form-horizontal" action="{{route('admin.president.store')}}" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="{{route('admin.exicutive.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">
@@ -66,7 +67,7 @@
                             <label class="col-md-2 control-label">Member</label>
                             <div class="col-md-10">
                             <select class="form-control" name="member_type" id="exampleFormControlSelect1" required>
-                                <option selected>President</option>
+                                <option selected>exicutive</option>
                             </select>   
                             </div>
                         </div>
