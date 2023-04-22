@@ -73,6 +73,9 @@
                                 <option >Organizing Secretary</option>
                                 <option >Finance Secretary</option>
                                 <option >Assit. Finance Secretary</option>
+                                <option >Publicity and Office Secretary</option>
+                                <option >Education and Culture Secretary</option>
+                                <option >Sports Secretary</option>
                             </select>   
                             </div>
                         </div>

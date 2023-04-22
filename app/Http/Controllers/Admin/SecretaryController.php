@@ -17,7 +17,7 @@ class SecretaryController extends Controller
     public function index()
     {
         $users= User::orderBy('created_at', 'DESC')->paginate(20);
-        $users = DB::table('users')->whereIn('member_type', ['General Secretary' , 'Asst. General Secretary', 'Joint General Secretary', 'Organizing Secretary','Finance Secretary','Assit. Finance Secretary'])->get();
+        $users = DB::table('users')->whereIn('member_type', ['General Secretary' , 'Asst. General Secretary', 'Joint General Secretary', 'Organizing Secretary','Finance Secretary','Assit. Finance Secretary','Publicity and Office Secretary','Education and Culture Secretary','Sports Secretary'])->get();
         return view('admin.pages.secretary.index', compact('users'));
     }
 

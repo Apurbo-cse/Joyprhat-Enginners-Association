@@ -65,7 +65,7 @@
                             </div>
                         </div>
 
-                        
+
                         <div class="form-group">
                             <label class="col-md-2 control-label">Member</label>
                             <div class="col-md-10">
@@ -76,6 +76,10 @@
                                 <option >Organizing Secretary</option>
                                 <option >Finance Secretary</option>
                                 <option >Assit. Finance Secretary</option>
+                                <option >Publicity and Office Secretary</option>
+                                <option >Education and Culture Secretary</option>
+                                <option >Sports Secretary</option>
+                                
                             </select>   
                             </div>
 
