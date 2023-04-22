@@ -26,7 +26,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Name</label>
                             <div class="col-md-10">
-                                <input value="{{old('name')}}" name="name" type="text" id="name" class="form-control" placeholder="name">
+                                <input value="{{old('name')}}" name="name" type="text" id="name" class="form-control"  placeholder="Enter a Name" required>
                                 @error('name')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -36,7 +36,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Edu / Profession</label>
                             <div class="col-md-10">
-                                <input name="edu" class="form-control" rows="5" placeholder="Content">{{ old('edu') }}</input>
+                            <input name="edu" value="{{old('edu')}}" class="form-control" rows="5" required placeholder="Enter a Edu / Profession" />
                                 @error('edu')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -45,7 +45,8 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Designation</label>
                             <div class="col-md-10">
-                                <input name="m_designation" class="form-control" rows="5" placeholder="Content">
+                            <input name="m_designation" value="{{old('m_designation')}}" class="form-control" rows="5" required placeholder="Enter a Designation" />
+                                
                                 @error('m_designation')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -53,9 +54,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-2 control-label">Location</label>
+                            <label class="col-md-2 control-label">Office Name / Address</label>
                             <div class="col-md-10">
-                                <input name="at_location" class="form-control" rows="5" placeholder="Content">
+                                <input name="at_location"  value="{{old('at_location')}}" class="form-control" rows="5" placeholder="Enter a Address">
                                 @error('at_location')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -88,15 +89,9 @@
                             <div class="col-md-10">
 
                             <div class="radio radio-info radio-inline">
-                                    <input type="radio" id="active" value="1" name="status">
-                                    <label for="active"> Active </label>
+                                    <input type="radio" id="active" value="1" name="status" checked>
+                                    <label for="active">Active </label>
                                 </div>
-                                
-                                <div class="radio radio-inline">
-                                    <input type="radio" id="inactive" value="0" name="status">
-                                    <label for="inactive"> Inactive </label>
-                                </div>
-
                                 @error('status')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror

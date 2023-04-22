@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-2 control-label">EmaEdu / Professionil</label>
+                            <label class="col-md-2 control-label">Edu / Professionil</label>
                             <div class="col-md-10">
                                 <input name="edu" value="{{$president->edu}}"  class="form-control" rows="5" placeholder="Enter Edu / Profession">
                             </div>
@@ -50,7 +50,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Office Name / Address</label>
                             <div class="col-md-10">
-                                <input name="at_location" value="{{$president->m_designation}}"  class="form-control" rows="5"  placeholder="Enter a Address">
+                                <input name="at_location" value="{{$president->at_location}}"  class="form-control" rows="5"  placeholder="Enter a Address">
                               
                             </div>
                         </div>

@@ -114,6 +114,8 @@ class SecretaryController extends Controller
             $file->move($path, $file_name);
             $secretary['image']= $path.'/'. $file_name;
         }
+        
+        $secretary->save();
         session()->flash('success', 'user Updated Successfully');
         return redirect()->route('admin.secretary.index');
     }

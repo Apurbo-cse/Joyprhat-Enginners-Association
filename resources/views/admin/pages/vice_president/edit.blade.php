@@ -27,31 +27,39 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Name</label>
                             <div class="col-md-10">
-                                <input value="{{$vice_president->name}}" disabled type="text" id="name" class="form-control" placeholder="name">
+                                <input value="{{$vice_president->name}}" disabled type="text" id="name" class="form-control" placeholder="Enter a Name">
                             
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-2 control-label">Email</label>
+                            <label class="col-md-2 control-label">Edu / Professionil</label>
                             <div class="col-md-10">
-                                <input value="{{$vice_president->email}}" disabled class="form-control" rows="5" placeholder="Content">
+                                <input name="edu" value="{{$vice_president->edu}}"  class="form-control" rows="5" placeholder="Enter Edu / Profession">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-2 control-label">Phone</label>
+                            <label class="col-md-2 control-label">Office Name / Address</label>
                             <div class="col-md-10">
-                                <input name="job" value="{{$vice_president->phone}}" disabled class="form-control" rows="5" placeholder="Content">
+                                <input name="at_location" value="{{$vice_president->at_location}}"  class="form-control" rows="5"  placeholder="Enter a Address">
                               
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label class="col-md-2 control-label">Image</label>
                             <div class="col-md-10">
+                                <input type="file" class="form-control" name="image" >
+                                @error('image')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                @if($vice_president->image != null)
                                     <img src="{{ asset($vice_president->image) }}" width="20%">
+                                @endif
                             </div>
                         </div>
+
 
                         <div class="form-group">
                             <label class="col-md-2 control-label">Member</label>
@@ -67,11 +75,11 @@
                             <div class="col-md-10">
                                 <div class="radio radio-info radio-inline">
                                     <input @if($vice_president->status == '1') checked   @endif type="radio" id="active" value="1" name="status">
-                                    <label for="active"> Vice President </label>
+                                    <label for="active">Active </label>
                                 </div>
                                 <div class="radio radio-inline">
                                     <input @if($vice_president->status == '0') checked   @endif type="radio" id="inactive" value="0" name="status">
-                                    <label for="inactive"> Ex Vice President </label>
+                                    <label for="inactive">Inactive </label>
                                 </div>
                                 @error('status')
                                 <div class="text-danger">{{ $message }}</div>
@@ -79,7 +87,7 @@
                             </div>
                         </div>
                         <div class="pull-right">
-                            <button type="submit" class="btn btn-info waves-effect waves-light">Make as Vice President</button>
+                            <button type="submit" class="btn btn-info waves-effect waves-light">Save</button>
                         </div>
 
 

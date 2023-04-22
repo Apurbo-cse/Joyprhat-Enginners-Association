@@ -52,11 +52,16 @@
                             </div>
                         </div>
 
-
                         <div class="form-group">
                             <label class="col-md-2 control-label">Image</label>
                             <div class="col-md-10">
+                                <input type="file" class="form-control" name="image" >
+                                @error('image')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                @if($secretary->image != null)
                                     <img src="{{ asset($secretary->image) }}" width="20%">
+                                @endif
                             </div>
                         </div>
 

@@ -112,6 +112,8 @@ class VicePresidentController extends Controller
             $file->move($path, $file_name);
             $vice_president['image']= $path.'/'. $file_name;
         }
+        
+        $vice_president->save();
         session()->flash('success', 'user Updated Successfully');
         return redirect()->route('admin.vice-president.index');
     }
