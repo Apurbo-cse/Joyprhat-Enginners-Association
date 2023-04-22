@@ -55,34 +55,34 @@ class FrontendController extends Controller
   public function joypurhat()
   {
 
-    $thana_committees = ThanaCommittee::where('thana_type', 'Joypuraht Sadar',)->where('status', '1')->orderBy('created_at', 'ASC')->get();
+    $thana_committees = ThanaCommittee::where('thana_type', 'Joypuraht Sadar',)->where('status', '1')->orderBy('created_at', 'DESC')->get();
     $thana_committee_types = ThanaCommitteeType::where('thana_type', 'Joypuraht Sadar',)->where('status', '1')->orderBy('created_at', 'DESC')->limit(1)->get();
     return view('frontend.pages.committee.joypurhat',compact('thana_committees','thana_committee_types'));
   }
 
   public function panchbibi()
   {
-    $thana_committees = ThanaCommittee::where('thana_type', 'Panchbibi',)->where('status', '1')->orderBy('created_at', 'ASC')->get();
+    $thana_committees = ThanaCommittee::where('thana_type', 'Panchbibi',)->where('status', '1')->orderBy('created_at', 'DESC')->get();
     $thana_committee_types = ThanaCommitteeType::where('thana_type', 'Panchbibi',)->where('status', '1')->orderBy('created_at', 'DESC')->limit(1)->get();
       return view('frontend.pages.committee.panchbibi',compact('thana_committees','thana_committee_types'));
   }
 
   public function kalai()
   {
-    $thana_committees = ThanaCommittee::where('thana_type', 'Kalai',)->where('status', '1')->orderBy('created_at', 'ASC')->get();
+    $thana_committees = ThanaCommittee::where('thana_type', 'Kalai',)->where('status', '1')->orderBy('created_at', 'DESC')->get();
     $thana_committee_types = ThanaCommitteeType::where('thana_type', 'Kalai',)->where('status', '1')->orderBy('created_at', 'DESC')->limit(1)->get();
     return view('frontend.pages.committee.kalai',compact('thana_committees','thana_committee_types'));
   }
 
   public function akkelpur()
   {
-    $thana_committees = ThanaCommittee::where('thana_type', 'Akkelpur',)->where('status', '1')->orderBy('created_at', 'ASC')->get();
+    $thana_committees = ThanaCommittee::where('thana_type', 'Akkelpur',)->where('status', '1')->orderBy('created_at', 'DESC')->get();
     $thana_committee_types = ThanaCommitteeType::where('thana_type', 'Akkelpur',)->where('status', '1')->orderBy('created_at', 'DESC')->limit(1)->get();
     return view('frontend.pages.committee.akkelpur',compact('thana_committees','thana_committee_types'));
   }
   public function khetlal()
   {
-    $thana_committees = ThanaCommittee::where('thana_type', 'Khetlal',)->where('status', '1')->orderBy('created_at', 'ASC')->get();
+    $thana_committees = ThanaCommittee::where('thana_type', 'Khetlal',)->where('status', '1')->orderBy('created_at', 'DESC')->get();
     $thana_committee_types = ThanaCommitteeType::where('thana_type', 'Khetlal',)->where('status', '1')->orderBy('created_at', 'DESC')->limit(1)->get();
     return view('frontend.pages.committee.khetlal',compact('thana_committees','thana_committee_types'));
   }
@@ -126,10 +126,25 @@ class FrontendController extends Controller
 
     public function convening_member()
     {
-        $presidents = DB::table('users')->whereIn('member_type', ['President'])->orderBy('created_at', 'ASC')->limit(1)->get();
-        $vice_presidents = DB::table('users')->whereIn('member_type', ['Vice President'])->orderBy('created_at', 'ASC')->limit(2)->get();
-        $secretary = DB::table('users')->whereIn('member_type', ['General Secretary'])->orderBy('created_at', 'ASC')->limit(1)->get();
-        return view('frontend.pages.member.index',compact('presidents','vice_presidents','secretary'));
+        $presidents = DB::table('users')->whereIn('member_type', ['President'])->whereIn('status', ['1'])->orderBy('created_at', 'DESC')->limit(1)->get();
+        $secretary = DB::table('users')->whereIn('member_type', ['General Secretary'])->whereIn('status', ['1'])->orderBy('created_at', 'DESC')->limit(1)->get();
+        $vice_presidents = DB::table('users')->whereIn('member_type', ['Vice President'])->whereIn('status', ['1'])->orderBy('created_at', 'DESC')->limit(2)->get();
+        $asst_secretary = DB::table('users')->whereIn('member_type', ['Asst. General Secretary'])->whereIn('status', ['1'])->orderBy('created_at', 'DESC')->limit(2)->get();
+        $joint_secretary = DB::table('users')->whereIn('member_type', ['Joint General Secretary'])->whereIn('status', ['1'])->orderBy('created_at', 'DESC')->limit(2)->get();
+        $org_secretary = DB::table('users')->whereIn('member_type', ['Organizing Secretary'])->whereIn('status', ['1'])->orderBy('created_at', 'DESC')->limit(2)->get();
+        $fin_secretary = DB::table('users')->whereIn('member_type', ['Finance Secretary'])->whereIn('status', ['1'])->orderBy('created_at', 'DESC')->limit(1)->get();
+        $asst_fin_secretary = DB::table('users')->whereIn('member_type', ['Assit. Finance Secretary'])->whereIn('status', ['1'])->orderBy('created_at', 'DESC')->limit(1)->get();
+        $publ_secretary = DB::table('users')->whereIn('member_type', ['Publicity and Office Secretary'])->whereIn('status', ['1'])->orderBy('created_at', 'DESC')->limit(1)->get();
+        $edu_secretary = DB::table('users')->whereIn('member_type', ['Education and Culture Secretary'])->whereIn('status', ['1'])->orderBy('created_at', 'DESC')->limit(1)->get();
+        $sport_secretary = DB::table('users')->whereIn('member_type', ['Sports Secretary'])->whereIn('status', ['1'])->orderBy('created_at', 'DESC')->limit(1)->get();
+        $exicutive_member = DB::table('users')->whereIn('member_type', ['Exicutive Member'])->whereIn('status', ['1'])->orderBy('created_at', 'DESC')->limit(3)->get();
+
+        return view('frontend.pages.central_committee.index',
+        compact('presidents','vice_presidents','secretary',
+        'asst_secretary','joint_secretary','org_secretary',
+        'fin_secretary','asst_fin_secretary','publ_secretary',
+        'edu_secretary','sport_secretary','exicutive_member'
+      ));
     }
 
 

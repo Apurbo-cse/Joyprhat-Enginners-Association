@@ -26,7 +26,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Name</label>
                             <div class="col-md-10">
-                            <input value="{{old('name')}}" name="name" type="text" id="name" class="form-control"  placeholder="Enter a Name" required>
+                            <input value="{{old('name')}}" name="name" type="text" id="name" class="form-control"  placeholder="Enter a Name" required >
                                 @error('name')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -36,7 +36,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Edu / Profession</label>
                             <div class="col-md-10">
-                            <input name="edu" value="{{old('edu')}}" class="form-control" rows="5" required placeholder="Enter a Edu / Profession" />
+                            <input name="edu" value="{{old('edu')}}" class="form-control" rows="5"  placeholder="Enter a Edu / Profession" />
                                 @error('edu')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -45,7 +45,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Designation</label>
                             <div class="col-md-10">
-                            <input name="m_designation" value="{{old('m_designation')}}" class="form-control" rows="5" required placeholder="Enter a Designation" />
+                            <input name="m_designation" value="{{old('m_designation')}}" class="form-control" rows="5"  placeholder="Enter a Designation" />
                                 @error('m_designation')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -65,7 +65,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Member</label>
                             <div class="col-md-10">
-                            <select class="form-control" name="member_type" id="exampleFormControlSelect1">
+                            <select class="form-control" name="member_type" id="exampleFormControlSelect1" required>
                                 <option selected>Vice President</option>
                             </select>   
                             </div>

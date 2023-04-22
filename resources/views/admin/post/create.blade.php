@@ -31,15 +31,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="details">Details</label>
-                            <textarea id="tinymce" name="description">
-                                {{ old('description') }}
-                           </textarea>
-                        </div>
-                        @error('sub_title')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
+                        
 
                         <div class="form-group">
                             <label class="col-md-2 control-label">Post Description</label>

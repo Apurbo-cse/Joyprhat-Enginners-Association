@@ -46,55 +46,6 @@
                         </div>
                     </div>
                     <!-- END News Block Four-->
-                    <!-- Contact -->
-                    <section id="contact">
-                        <p>Comment</p>
-                        <div class="user-comment" style="padding: 10px; border-bottom: 1px solid  rgba(88, 88, 88, 0.123); ">
-                            <table style="font-size: 12px;">
-                                <tr>
-                                    <td>
-                                        <b>Apurbo Kumar </b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style=" font-size: 12px; ">&nbsp;&nbsp;<i class="fa fa-comments " aria-hidden="true " style="font-size: 10px; "></i> &nbsp;&nbsp; Lorem ipsum dolor sit amet, consectetuer adipiscing elit doli.</li>
-                                    </td>
-                                    <td style="font-size: 10px; ">
-                                        &nbsp;&nbsp; &nbsp;&nbsp;
-                                        <li class=" fa fa-clock-o " aria-hidden="true "> </li>&nbsp; 3rd March, 2020
-                                    </td>
-                                </tr>
-                            </table>
-                            <br>
-                            <table>
-                                <tr>
-                                    <td style="font-size: 12px; ">
-                                        <b>Akash Sarkar </b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="font-size: 12px; ">&nbsp;&nbsp;<i class="fa fa-comments " aria-hidden="true " style="font-size: 10px; "></i> &nbsp;&nbsp; Cumtipsu sociis natoque penatibus et magnis dis parturient montesti .</li>
-                                    </td>
-                                    <td style="font-size: 10px; ">
-                                        &nbsp;&nbsp; &nbsp;&nbsp;
-                                        <li class=" fa fa-clock-o " aria-hidden="true "></li> &nbsp; 17th November, 2020
-                                    </td>
-                                </tr>
-                            </table>
-                            <br>
-                        </div>
-                        <br>
-
-
-                        <div class="inner-width ">
-                            <form class="contact-form ">
-                                <input type="text " class="nameZone " placeholder="Name " required>
-                                <input type="email " class="emailZone " placeholder="Email " required>
-                                <textarea class="messageZone " placeholder="Message " required></textarea>
-                                <input type="submit " value="Send Message " class="btn ">
-                            </form>
-                        </div>
-                    </section>
 
                     <br><br>
 

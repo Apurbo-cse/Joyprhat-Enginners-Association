@@ -1,15 +1,15 @@
 @extends('admin.layouts.master')
-@section('title', 'Create New Exicutive Member')
+@section('title', 'Create New President Member')
 @section('content')
     <!-- Page-Title -->
     <div class="row">
         <div class="col-sm-12">
             <div class="page-header-title">
-                <h4 class="pull-left page-title">Create New Exicutive Member</h4>
+                <h4 class="pull-left page-title">Create New President Member</h4>
                 <ol class="breadcrumb pull-right">
                     <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-                    <li><a href="{{route('admin.member.index')}}">Exicutive Member </a></li>
-                    <li class="active">Create Exicutive Member</li>
+                    <li><a href="{{route('admin.president.index')}}">President Member </a></li>
+                    <li class="active">Create President Member</li>
                 </ol>
                 <div class="clearfix"></div>
             </div>
@@ -19,15 +19,15 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="panel panel-primary">
-                <div class="panel-heading"><h3 class="panel-title">Exicutive Member Form</h3></div>
+                <div class="panel-heading"><h3 class="panel-title">President Member Form</h3></div>
                 <div class="panel-body">
-                    <form class="form-horizontal" action="{{route('admin.exicutive.store')}}" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="{{route('admin.president.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">
                             <label class="col-md-2 control-label">Name</label>
                             <div class="col-md-10">
-                                <input value="{{old('name')}}" name="name" type="text" id="name" class="form-control"  placeholder="Enter a Name" required>
+                                <input value="{{old('name')}}" name="name" type="text" id="name" class="form-control"  placeholder="Enter a Name" required >
                                 @error('name')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -37,7 +37,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Edu / Profession</label>
                             <div class="col-md-10">
-                                <input name="edu" value="{{old('edu')}}" class="form-control" rows="5" required placeholder="Enter a Edu / Profession" />
+                                <input name="edu" value="{{old('edu')}}" class="form-control" rows="5"  placeholder="Enter a Edu / Profession" />
                                 @error('edu')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -46,7 +46,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Designation</label>
                             <div class="col-md-10">
-                            <input name="m_designation" value="{{old('m_designation')}}" class="form-control" rows="5" required placeholder="Enter a Designation" />
+                            <input name="m_designation" value="{{old('m_designation')}}" class="form-control" rows="5"  placeholder="Enter a Designation" />
                                 @error('m_designation')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -66,8 +66,8 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Member</label>
                             <div class="col-md-10">
-                            <select class="form-control" name="member_type" id="exampleFormControlSelect1" required>
-                                <option selected>exicutive</option>
+                            <select class="form-control" name="member_type" id="exampleFormControlSelect1" >
+                                <option selected>President</option>
                             </select>   
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Image</label>
                             <div class="col-md-10">
-                                <input name="image" type="file" id="image" class="form-control" required>
+                                <input name="image" type="file" id="image" class="form-control" >
                                 @error('image')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror

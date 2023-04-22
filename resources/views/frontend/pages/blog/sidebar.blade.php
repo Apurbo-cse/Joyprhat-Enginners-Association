@@ -19,7 +19,7 @@
     <div class="sidebar-widget sidebar-adds-widget">
         <div class="adds-block" style="background-image:url(images/noid.jpg);">
             <div class="inner-box">
-                <b style="color: white;">No ID No Service</b>
+                <b style="color: white;">No Member Service</b>
             </div>
 
         </div> <br>
@@ -76,7 +76,7 @@
                             <a class="image" href=""><img src="{{asset($post->image)}}" alt="post" width="100%"
                                     height="80"></a>
                             <!-- Content -->
-                            <div class="content">
+                            <div class="content text-muted">
                                 <!-- Title -->
                                 <h5>
                                     <a href="">{{$post->title}}</a>
@@ -106,7 +106,7 @@
                                     height="80"></a>
 
                             <!-- Content -->
-                            <div class="content">
+                            <div class="content text-muted">
 
                                 <!-- Title -->
                                 <h5>
@@ -144,7 +144,7 @@
     <div class="widget-content">
         <div class="image">
             <a href="https://www.facebook.com/theofficialjea" target="_blank"><img
-                    src="{{ asset('images/Screenshot 2022-05-03 113345.png') }}" /></a>
+                    src="{{ asset('frontend/images/fbPage.PNG') }}" /></a>
         </div>
     </div>
 </div>
